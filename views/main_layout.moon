@@ -11,9 +11,13 @@ class MainLayout extends html.Widget
         link rel:"stylesheet", href:"http://yui.yahooapis.com/pure/0.6.0/pure-min.css"
         link rel:"stylesheet", href:"http://yui.yahooapis.com/pure/0.6.0/grids-responsive-min.css"
         link rel:"stylesheet", href:"/static/css/main_layout.css"
+        link rel:"stylesheet", href:"//cdnjs.cloudflare.com/ajax/libs/github-fork-ribbon-css/0.1.1/gh-fork-ribbon.min.css"
         title @title or (@has_content_for("title") and @content_for("title")) or "Komischfarben"
         @mixFavicon!
       body ->
+        div class:"github-fork-ribbon-wrapper right",->
+          div class:"github-fork-ribbon",->
+            a href:"https://github.com/nonchip/komischfarben2", "Fork me on GitHub"
         div id:"layout",->
           a href:"#menu",id:"menuLink",class:"menu-link",->
             span ""
@@ -22,8 +26,8 @@ class MainLayout extends html.Widget
               a class:"pure-menu-heading", href:"/", "Komischfarben"
               @userManagementMixinMenu{ul:"pure-menu-list",li:"pure-menu-item",a:"pure-menu-link", active_li:"pure-menu-selected"}
               ul class:"pure-menu-list", ->
-                li class:"pure-menu-item",->
-                  a class:"pure-menu-link",href:"https://github.com/nonchip/komischfarben2",style:"color:#555",target:"_blank","Github"
+                --li class:"pure-menu-item",->
+                --  a class:"pure-menu-link",href:"https://github.com/nonchip/komischfarben2",style:"color:#555",target:"_blank","Github"
                 li class:"pure-menu-item",->
                   a class:"pure-menu-link",href:"https://github.com/nonchip/komischfarben2/issues",style:"color:#555",target:"_blank","Report issues"
           div id:"main",->
