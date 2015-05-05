@@ -2,6 +2,7 @@ html = require "lapis.html"
 
 class MainLayout extends html.Widget
   @include require "views.mixin.favicon"
+  @include require "lazuli.modules.user_management.views.mixin_menu"
   content: =>
     html_5 ->
       head ->
@@ -19,6 +20,7 @@ class MainLayout extends html.Widget
           div id:"menu",->
             div class:"pure-menu pure-menu-open",->
               a class:"pure-menu-heading", href:"/", "Komischfarben"
+              @userManagementMixinMenu!
               ul ->
                 li ->
                   a href:"https://github.com/nonchip/komischfarben2",style:"color:#555",target:"_blank","Github"
