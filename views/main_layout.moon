@@ -8,8 +8,8 @@ class MainLayout extends html.Widget
       head ->
         meta charset:"utf-8"
         meta name:"viewport", content:"width=device-width, initial-scale=1"
-        link rel:"stylesheet", href:"http://yui.yahooapis.com/pure/0.5.0/pure-min.css"
-        link rel:"stylesheet", href:"http://yui.yahooapis.com/pure/0.5.0/grids-responsive-min.css"
+        link rel:"stylesheet", href:"http://yui.yahooapis.com/pure/0.6.0/pure-min.css"
+        link rel:"stylesheet", href:"http://yui.yahooapis.com/pure/0.6.0/grids-responsive-min.css"
         link rel:"stylesheet", href:"/static/css/main_layout.css"
         title @title or (@has_content_for("title") and @content_for("title")) or "Komischfarben"
         @mixFavicon!
