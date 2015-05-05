@@ -2,8 +2,8 @@
 
 ## deploying
 
-    git clone https://github.com/nonchip/komischfarben2
-    cd komischfarben2
+    git clone https://github.com/nonchip/komischfarben2 komischfarben.de
+    cd komischfarben.de
     git submodule init
     git submodule update
     cd _lazuli
