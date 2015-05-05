@@ -15,8 +15,8 @@ class MainLayout extends html.Widget
         title @title or (@has_content_for("title") and @content_for("title")) or "Komischfarben"
         @mixFavicon!
       body ->
-        div class:"github-fork-ribbon-wrapper right",->
-          div class:"github-fork-ribbon",->
+        div class:"github-fork-ribbon-wrapper left-bottom",->
+          div class:"github-fork-ribbon",style:"background-color: #333;",->
             a href:"https://github.com/nonchip/komischfarben2", "Fork me on GitHub"
         div id:"layout",->
           a href:"#menu",id:"menuLink",class:"menu-link",->
