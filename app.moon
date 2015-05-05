@@ -2,6 +2,7 @@ lazuli = require "lazuli"
 import cached from require "lapis.cache"
 
 class extends lazuli.Application
+  @include "lazuli.modules.user_management"
   layout: require "views.main_layout"
   [index: "/"]: cached exptime: 1, [1]: =>
     @html ->
