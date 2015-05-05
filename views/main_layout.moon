@@ -20,12 +20,12 @@ class MainLayout extends html.Widget
           div id:"menu",->
             div class:"pure-menu pure-menu-open",->
               a class:"pure-menu-heading", href:"/", "Komischfarben"
-              @userManagementMixinMenu!
-              ul ->
-                li ->
-                  a href:"https://github.com/nonchip/komischfarben2",style:"color:#555",target:"_blank","Github"
-                li ->
-                  a href:"https://github.com/nonchip/komischfarben2/issues",style:"color:#555",target:"_blank","Report issues"
+              @userManagementMixinMenu{ul:"pure-menu-list",li:"pure-menu-item",a:"pure-menu-item"}
+              ul class:"pure-menu-list", ->
+                li class:"pure-menu-item",->
+                  a class:"pure-menu-link",href:"https://github.com/nonchip/komischfarben2",style:"color:#555",target:"_blank","Github"
+                li class:"pure-menu-item",->
+                  a class:"pure-menu-link",href:"https://github.com/nonchip/komischfarben2/issues",style:"color:#555",target:"_blank","Report issues"
           div id:"main",->
             if true or @has_content_for "header" then
               div class:"header",->
