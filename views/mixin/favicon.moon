@@ -1,7 +1,9 @@
+config = (require "lapis.config").get!
+appname=config.appname or "KomischFarben"
 class FaviconMixin
   mixFavicon: ()-> --http://realfavicongenerator.net/
-    meta name:"application-name", content:"Komischfarben"
-    meta name:"apple-mobile-web-app-title", content:"Komischfarben"
+    meta name:"application-name", content:appname
+    meta name:"apple-mobile-web-app-title", content:appname
     meta name:"msapplication-config", content:"/static/img/favicon/browserconfig.xml"
     meta name:"msapplication-TileImage", content:"/static/img/favicon/mstile-144x144.png"
     meta name:"msapplication-TileColor", content:"#2b5797"

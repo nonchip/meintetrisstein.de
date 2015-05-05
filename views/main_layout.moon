@@ -1,5 +1,6 @@
 html = require "lapis.html"
-
+config = (require "lapis.config").get!
+appname=config.appname or "KomischFarben"
 class MainLayout extends html.Widget
   @include require "views.mixin.favicon"
   @include require "lazuli.modules.user_management.views.mixin_menu"
@@ -12,7 +13,7 @@ class MainLayout extends html.Widget
         link rel:"stylesheet", href:"http://yui.yahooapis.com/pure/0.6.0/grids-responsive-min.css"
         link rel:"stylesheet", href:"/static/css/main_layout.css"
         link rel:"stylesheet", href:"//cdnjs.cloudflare.com/ajax/libs/github-fork-ribbon-css/0.1.1/gh-fork-ribbon.min.css"
-        title @title or (@has_content_for("title") and @content_for("title")) or "Komischfarben"
+        title @title or (@has_content_for("title") and @content_for("title")) or appname
         @mixFavicon!
       body ->
         div class:"github-fork-ribbon-wrapper left-bottom",->
@@ -23,7 +24,7 @@ class MainLayout extends html.Widget
             span ""
           div id:"menu",->
             div class:"pure-menu pure-menu-open",->
-              a class:"pure-menu-heading", href:"/", "Komischfarben"
+              a class:"pure-menu-heading", href:"/", appname
               @userManagementMixinMenu{ul:"pure-menu-list",li:"pure-menu-item",a:"pure-menu-link", active_li:"pure-menu-selected"}
               ul class:"pure-menu-list", ->
                 --li class:"pure-menu-item",->
