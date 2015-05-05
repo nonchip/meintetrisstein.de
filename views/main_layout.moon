@@ -20,7 +20,7 @@ class MainLayout extends html.Widget
           div id:"menu",->
             div class:"pure-menu pure-menu-open",->
               a class:"pure-menu-heading", href:"/", "Komischfarben"
-              @userManagementMixinMenu{ul:"pure-menu-list",li:"pure-menu-item",a:"pure-menu-item"}
+              @userManagementMixinMenu{ul:"pure-menu-list",li:"pure-menu-item",a:"pure-menu-link"}
               ul class:"pure-menu-list", ->
                 li class:"pure-menu-item",->
                   a class:"pure-menu-link",href:"https://github.com/nonchip/komischfarben2",style:"color:#555",target:"_blank","Github"
