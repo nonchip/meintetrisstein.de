@@ -4,6 +4,15 @@ appname=config.appname or "KomischFarben"
 class MainLayout extends html.Widget
   @include require "views.mixin.favicon"
   @include require "lazuli.modules.user_management.views.mixin_menu"
+  menuItem: (to,text,lic="",ac="",target=nil)=>
+    url=if type(to)=="table"
+      @url_for unpack to
+    else
+      @url_for to
+    active=@req.parsed_url.path==url
+    activeclass=active and " pure-menu-selected" or " "
+    li class:"pure-menu-item"..activeclass..lic,->
+      a class:"pure-menu-link "..ac,href:url,target:target,text
   content: =>
     html_5 ->
       head ->
@@ -25,7 +34,9 @@ class MainLayout extends html.Widget
           div id:"menu",->
             div class:"pure-menu pure-menu-open",->
               a class:"pure-menu-heading", href:"/", appname
-              @userManagementMixinMenu{ul:"pure-menu-list",li:"pure-menu-item",a:"pure-menu-link", active_li:"pure-menu-selected"}
+              @userManagementMixinMenu!
+              --ul class:"pure-menu-list", ->
+              --  @menuItem "index","Test"
               ul class:"pure-menu-list", ->
                 --li class:"pure-menu-item",->
                 --  a class:"pure-menu-link",href:"https://github.com/nonchip/komischfarben2",style:"color:#555",target:"_blank","Github"
