@@ -8,6 +8,7 @@
     git submodule update
     cd _lazuli
     ./setup.zsh
+    ./luarocks install markdown
     cd ..
     ./run.zsh
 
