@@ -7,7 +7,7 @@ class extends lazuli.Application
     math.randomseed os.time!
     @piece=math.random 1, 7
     render: true
-  [byID: "/:id"]: =>
+  [byID: "/:id"]: cached exptime: 60, [1]:=>
     @piece=tonumber(@params.id)
     render: "index"
   handle_404: cached exptime: 1, [1]: =>
