@@ -7,3 +7,5 @@ class Index extends html.Widget
       img class:"bigpiece",src:"/static/img/pieces/"..@piece..".png"
     div class:"footer", ->
       a href:@url_for("byID",id:@piece),"Link auf Deinen Tetrisstein"
+      br!
+      a href:@url_for("index"),"Neues Steinchen gef&auml;llig?"
