@@ -29,6 +29,16 @@ body{
 .center img{
   width: 100%;
   image-rendering: pixelated;
-  margin-top: 3em;
+  margin-top: 6em;
   animation: spin 30s infinite linear;
+}
+
+.footer{
+  position: fixed;
+  bottom: 1em;
+  right: 1em;
+}
+
+.footer a{
+  color: #fff;
 }

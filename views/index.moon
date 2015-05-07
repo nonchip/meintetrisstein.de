@@ -5,3 +5,5 @@ class Index extends html.Widget
     div class:"center", ->
       h1 "Du bist ein"
       img class:"bigpiece",src:"/static/img/pieces/"..@piece..".png"
+    div class:"footer", ->
+      a href:@url_for("byID",id:@piece),"Link auf Deinen Tetrisstein"

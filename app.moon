@@ -6,8 +6,10 @@ class extends lazuli.Application
   [index: "/"]: =>
     math.randomseed os.time!
     @piece=math.random 1, 7
-    print @piece
     render: true
+  [byID: "/:id"]: =>
+    @piece=@params.id
+    render: "index"
   handle_404: cached exptime: 1, [1]: =>
     @html ->
       div style:"margin:20%",->
