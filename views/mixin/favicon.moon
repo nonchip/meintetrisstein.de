@@ -1,5 +1,5 @@
 config = (require "lapis.config").get!
-appname=config.appname or "KomischFarben"
+appname=config.appname or "meinTetrisstein.de"
 class FaviconMixin
   mixFavicon: ()-> --http://realfavicongenerator.net/
     meta name:"application-name", content:appname
