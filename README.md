@@ -1,14 +1,13 @@
-# komischfarben.de codebase v2
+# meintetrisstein.de codebase
 
 ## deploying
 
-    git clone https://github.com/nonchip/komischfarben2 komischfarben.de
-    cd komischfarben.de
+    git clone https://github.com/nonchip/meintetrisstein.de meintetrisstein.de
+    cd meintetrisstein.de
     git submodule init
     git submodule update
     cd _lazuli
     ./setup.zsh
-    ./luarocks install lunamark
     cd ..
     ./run.zsh
 
