@@ -3,8 +3,10 @@ import cached from require "lapis.cache"
 
 class extends lazuli.Application
   layout: require "views.main_layout"
-  [index: "/"]: cached exptime: 1, [1]: =>
-    @piece=math.random(1,7)
+  [index: "/"]: =>
+    math.randomseed os.time!
+    @piece=math.random 1, 7
+    print @piece
     render: true
   handle_404: cached exptime: 1, [1]: =>
     @html ->
