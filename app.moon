@@ -8,8 +8,9 @@ class extends lazuli.Application
     @piece=math.random 1, 7
     render: true
   [byID: "/:id"]: cached exptime: 60, [1]:=>
-    @piece=tonumber(@params.id)
-    render: "index"
+    @piece=math.floor(tonumber(@params.id))
+    if @piece >=1 and @piece <=7
+      render: "index"
   handle_404: cached exptime: 1, [1]: =>
     @html ->
       div style:"margin:20%",->
