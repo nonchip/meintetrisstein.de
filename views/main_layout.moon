@@ -17,4 +17,5 @@ class MainLayout extends html.Widget
         div class:"github-fork-ribbon-wrapper left-bottom",->
           div class:"github-fork-ribbon",style:"background-color: #333;",->
             a href:"https://github.com/nonchip/meintetrisstein.de", "Fork me on GitHub"
-
+        div class:"content",->
+          @content_for "inner"
