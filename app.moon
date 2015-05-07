@@ -8,7 +8,7 @@ class extends lazuli.Application
     @piece=math.random 1, 7
     render: true
   [byID: "/:id"]: =>
-    @piece=@params.id
+    @piece=tonumber(@params.id)
     render: "index"
   handle_404: cached exptime: 1, [1]: =>
     @html ->
